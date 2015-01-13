@@ -78,9 +78,9 @@ class AdminScytheWidget(forms.FileInput):
         if postedimg:
             from StringIO import StringIO
             from django.core.files.uploadedfile import InMemoryUploadedFile
-            import Image
+            from PIL import Image
             import os
-            import ImageFile
+            from PIL import ImageFile
             ImageFile.MAXBLOCK = 1024 * 1024 # default is 64k - avoids 'Suspension not allowed here' error
             tmp_file = StringIO()
             if hasattr(postedimg, 'temporary_file_path'):
